@@ -1,0 +1,3 @@
+what are lists?
+List is a datatype where you can store multiple items under 1 name. Its acts like a dynamic array.
+ex- [23, Rohan, 23.5,]
