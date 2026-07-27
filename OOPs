@@ -1,1 +1,3 @@
-
+1. A user can find the distance b/w a given 2D point and given line.
+def shortest_distance(line, point):
+    return abs(line.A*point.x_cod + line.B*point.y_cod + line.C)/(line.A**2 + line.B**2)**0.5
