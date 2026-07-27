@@ -1,3 +1,55 @@
 1. A user can find the distance b/w a given 2D point and given line.
 def shortest_distance(line, point):
     return abs(line.A*point.x_cod + line.B*point.y_cod + line.C)/(line.A**2 + line.B**2)**0.5
+
+How objects access attributes.
+# how to access attributes.
+p = Person('nitish', 'india')
+
+p.name
+'nitish'
+
+#how to access methods
+p.greet()
+namaste nitish
+
+# what if i try to access non-existing attributes
+p.gender
+error
+
+#Attributes creation from outside of the class
+p.gender = 'male'
+p.gender
+'male'
+
+# object without a reference 
+class Person:
+    def __init__(self):
+        self.name = 'nitish'
+        self.gender = 'gender'
+
+        p = Person()
+
+ # multiple ref
+ print(id(p))
+print(id(q))
+
+
+Refernce Variables
+. Reference variables hold the objects.
+. we can create objects without reference variable as well
+. an object can have multiple refernce variables
+. assigning a new reference variable to an existing object does not create a new object 
+
+Pass by Reference
+class Person:
+    def __init__(self):
+        self.name = 'name'
+        self.gender = 'gender'
+
+    # outside the class -> function
+    def greet(person):
+        print('Hi my name is - shortest_distance.py:52',person.name,'and I am a ',person.gender)
+
+p = Person('nitish','male')
+greet(p)
