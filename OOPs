@@ -53,3 +53,4 @@ class Person:
 
 p = Person('nitish','male')
 greet(p)
+greet(p)
