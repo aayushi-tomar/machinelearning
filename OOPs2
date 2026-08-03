@@ -153,6 +153,75 @@ result:- Inside phone constructor
 result :- Inside smartphone constructor
 
 
+ (2)  class Parent:
+
+    def __init__(self,num):
+        self.__num=num
+
+    def get_num(self):
+        return self.__num
+
+class Child(Parent):
+
+    def show(self):
+        print("This is in child class")
+        
+son=Child(100)
+print(son.get_num())
+son.show()
+
+result:- 100
+this is in child class
+
+
+(3)  class Parent:
+
+    def __init__(self,num):
+        self.__num=num
+
+    def get_num(self):
+        return self.__num
+
+class Child(Parent):
+
+    def __init__(self,val,num):
+        self.__val=val
+
+    def get_val(self):
+        return self.__val
+        
+son=Child(100,10)
+print("Parent: Num:",son.get_num())
+print("Child: Val:",son.get_val())
+
+result:-error
+
+(4)   class A:
+    def __init__(self):
+        self.var1=100
+
+    def display1(self,var1):
+        print("class A :", self.var1)
+class B(A):
+  
+    def display2(self,var1):
+        print("class B :", self.var1)
+
+obj=B()
+obj.display1(200)
+
+result:-100
+
+
+
+
+
+
+
+
+
+
+
 
 
 
