@@ -121,21 +121,36 @@ s.enroll()
 
 
 #class diagram
-
+(arrow head is on parent side)
 <-------(inheritance)
 
+What gets inherited?
+. Constructor
+. Non Private Attributes
+. Non Private Methods
 
+#Constructor example
 
+class Phone:
+def __init__(self, price, brand, camers):
+print('Inside phone constructor')
+self.price = price
+self.brand = brand
 
+def buy(self):
+print("Buying a phone")
 
+class SmartPhone(Phone):
+def __init__(self, os, ram)
+self.os = os
+self.ram = ram
+print("Inside SmartPhone constructor")
 
+s = SmartPhone(20000, "Apple", 13)
+s = SmartPhone("Android", 2)
 
-
-
-
-
-
-
+result:- Inside phone constructor
+result :- Inside smartphone constructor
 
 
 
