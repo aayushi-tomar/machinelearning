@@ -251,12 +251,60 @@ class Phone:
 class SmartPhone(Phone):
     def buy(self):
         print ("Buying a smartphone")
-        # syntax to call parent ka buy method
+        # syntax to call parent's buy method
         super().buy()
 
 s=SmartPhone(20000, "Apple", 13)
 
 s.buy()
+result:- inside phome constructor
+buying a smartphone
+buying a phone
+
+# super -> constuctor
+class Phone:
+    def __init__(self, price, brand, camera):
+        print ("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+class SmartPhone(Phone):
+    def __init__(self, price, brand, camera, os, ram):
+        print('Inside smartphone constructor')
+        super().__init__(price, brand, camera)
+        self.os = os
+        self.ram = ram
+        print ("Inside smartphone constructor")
+
+s=SmartPhone(20000, "Samsung", 12, "Android", 2)
+
+print(s.os)
+print(s.brand)
+
+result:- Inside smartphone constructor
+Inside phone constructor
+Inside smartphone constructor
+Android
+Samsung
+
+Inheritance in summary
+A class can inherit from another class.
+
+Inheritance improves code reuse
+
+Constructor, attributes, methods get inherited to the child class
+
+The parent has no access to the child class
+
+Private properties of parent are not accessible directly in child class
+
+Child class can override the attributes or methods. This is called method overriding
+
+super() is an inbuilt function which is used to invoke the parent class methods and constructor
+
+
+
 
 
   
