@@ -81,6 +81,25 @@ result:- gurgaon 12011 haryana
 Aggregation class diagram:-
 
 
+Customer                             Address
+. name                               . city
+. gender                             . pin
+. address                            . state 
+----------- * -------------------  --------------
++ print address                      + get city
++ edit profile                       + edit address
+
+
+Inheritance:-
+
+
+
+
+
+
+
+
+
 
 
 
