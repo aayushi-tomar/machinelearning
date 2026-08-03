@@ -304,6 +304,65 @@ Child class can override the attributes or methods. This is called method overri
 super() is an inbuilt function which is used to invoke the parent class methods and constructor
 
 
+(2)  class Parent:
+    def __init__(self):
+        self.num=100
+
+class Child(Parent):
+
+    def __init__(self):
+        super().__init__()
+        self.var=200
+        
+    def show(self):
+        print(self.num)
+        print(self.var)
+
+son=Child()
+son.show()
+
+result:- 100
+200
+
+(3)  class Parent:
+    def __init__(self):
+        self.__num=100
+
+    def show(self):
+        print("Parent:",self.__num)
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.__var=10
+
+    def show(self):
+        print("Child:",self.__var)
+
+obj=Child()
+obj.show()
+result:- 10
+
+(4)  class Parent:
+    def __init__(self):
+        self.__num=100
+
+    def show(self):
+        print("Parent:",self.__num)
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.__var=10
+
+    def show(self):
+        print("Child:",self.__var)
+
+obj=Child()
+obj.show()
+
+result:- child:10
+
 
 
 
