@@ -94,24 +94,33 @@ Static Keywords(VS Instance variables)
 
 #need for static vars
 
-
 class Atm:
 
-  __counter = 1
+counter = 1
 
   # constructor(special function)->superpower -> 
   def __init__(self):
     print(id(self))
     self.pin = ''
     self.__balance = 0
-    self.cid = Atm.__counter
-    Atm.__counter = Atm.__counter + 1
+    self.cid = 0
+    self.cid += 1
     #self.menu()
 
-  # utility functions
-  @staticmethod
-  def get_counter():
-    return Atm.__counter
+OR
+
+ def __init__(self):
+    print(id(self))
+    self.pin = ''
+    self.__balance = 0
+    self.cid = Atm.counter
+    Atm.counter = Atm.counter + 1
+    #self.menu()
+
+#utility functions
+@staticmethod
+ def get_balance():
+    return self.__balance
 
 
   def get_balance(self):
@@ -186,9 +195,19 @@ class Atm:
 
 
 
- 
+c1 = Atm()
+140655538287248
 
+Atm.get_counter()
+2
 
+c3 = Atm()
+140655538226704
 
+c3.cid
+3
+
+Atm.counter
+4
 
 
