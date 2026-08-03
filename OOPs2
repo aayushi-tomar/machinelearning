@@ -991,7 +991,7 @@ result:-   error
 
 Polymorphism:-
 (having multiple faces)
-. Method Overriding
+. Method Overriding(methods having same name)
 . Method Overloading
 . Operator Overloading
 
