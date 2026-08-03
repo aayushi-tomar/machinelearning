@@ -103,7 +103,7 @@ def login(self):
 print('login')
 
 #child
-class Student
+class Student(User):
 
 def __init__(self):
 self.rollno = 100
@@ -118,6 +118,13 @@ print(s.name)
 print(s.rollno)
 s.login()
 s.enroll()
+
+
+#class diagram
+
+<-------(inheritance)
+
+
 
 
 
