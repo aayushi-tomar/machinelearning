@@ -92,6 +92,33 @@ Customer                             Address
 
 Inheritance:-
 
+#Example
+#parent
+class User:
+
+def __init__(self):
+self.name = 'nitish'
+
+def login(self):
+print('login')
+
+#child
+class Student
+
+def __init__(self):
+self.rollno = 100
+
+def enroll(self):
+print('enroll into the course')
+
+u = User()
+s = Student()
+
+print(s.name)
+print(s.rollno)
+s.login()
+s.enroll()
+
 
 
 
