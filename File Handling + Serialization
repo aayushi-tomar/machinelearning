@@ -94,3 +94,22 @@ while True:
     print(data,end='')
 
 f.close()
+
+result:-
+hello
+hi
+how are you
+I am fine
+
+Using Context Manager (With):-
+. It's a good idea to close a file after usage as it will free up the resources
+. If we dont close it, garbage collector would close it
+. with keyword closes the file as soon as the usage is over
+
+# with
+with open('/content/sample1.txt','w') as f:
+ f.write('selmon bhai')
+
+
+
+
