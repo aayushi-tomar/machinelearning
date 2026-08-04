@@ -203,5 +203,75 @@ d = {
 with open('sample.txt','w') as f:
   f.write(str(d))
 
+Serialization and Deserialization:-
+. Serialization - process of converting python data types to JSON format
+. Deserialization - process of converting JSON to python data types
+
+What is JSON?
+
+
+# serialization using json module
+# list
+import json
+
+L = [1,2,3,4]
+
+with open('demo.json','w') as f:
+  json.dump(L,f)
+
+
+# dict
+d = {
+    'name':'nitish',
+     'age':33,
+     'gender':'male'
+}
+
+with open('demo.json','w') as f:
+  json.dump(d,f,indent=4)
+
+# deserialization
+import json
+
+with open('demo.json','r') as f:
+  d = json.load(f)
+  print(d)
+  print(type(d))
+
+result:- {'name': 'nitish', 'age': 33, 'gender': 'male'}
+<class 'dict'>
+
+# serialize and deserialize tuple
+import json
+
+t = (1,2,3,4,5)
+
+with open('demo.json','w') as f:
+  json.dump(t,f)
+
+# serialize and deserialize a nested dict
+
+d = {
+    'student':'nitish',
+     'marks':[23,14,34,45,56]
+}
+
+with open('demo.json','w') as f:
+  json.dump(d,f)
+
+
+Serializing and Deserializing custom objects:-
+
+class Person:
+
+  def __init__(self,fname,lname,age,gender):
+    self.fname = fname
+    self.lname = lname
+    self.age = age
+    self.gender = gender
+
+# format to printed in
+# -> Nitish Singh age -> 33 gender -> male
+person = Person('Nitish','Singh',33,'male')
 
 
