@@ -274,4 +274,64 @@ class Person:
 # -> Nitish Singh age -> 33 gender -> male
 person = Person('Nitish','Singh',33,'male')
 
+# As a string
+import json
+
+def show_object(person):
+  if isinstance(person,Person):
+    return "{} {} age -> {} gender -> {}".format(person.fname,person.lname,person.age,person.gender)
+
+with open('demo.json','w') as f:
+  json.dump(person,f,default=show_object)
+
+# As a dict
+import json
+
+def show_object(person):
+  if isinstance(person,Person):
+    return {'name':person.fname + ' ' + person.lname,'age':person.age,'gender':person.gender}
+
+with open('demo.json','w') as f:
+  json.dump(person,f,default=show_object,indent=4)
+
+# deserializing
+import json
+
+with open('demo.json','r') as f:
+  d = json.load(f)
+  print(d)
+  print(type(d))
+result:- 
+{'name': 'Nitish Singh', 'age': 33, 'gender': 'male'}
+<class 'dict'>
+
+Pickling:-
+Pickling is the process whereby a Python object hierarchy is converted into a byte stream, and unpickling is the inverse operation, whereby a byte stream (from a binary file or bytes-like object) is converted back into an object hierarchy.
+
+class Person:
+
+  def __init__(self,name,age):
+    self.name = name
+    self.age = age
+
+  def display_info(self):
+    print('Hi my name is',self.name,'and I am ',self.age,'years old')
+
+p = Person('nitish',33)
+
+# pickle dump
+import pickle
+with open('person.pkl','wb') as f:
+  pickle.dump(p,f)
+
+# pickle load
+import pickle
+with open('person.pkl','rb') as f:
+  p = pickle.load(f)
+
+p.display_info()
+result:- Hi my name is nitish and I am  33 years old
+
+Pickle Vs Json:-
+. Pickle lets the user to store data in binary format. JSON lets the user store data in a human-readable text format.
 
