@@ -171,7 +171,25 @@ inner 2
 outer 2
 main program
 
+Decorators
+A decorator in python is a function that receives another function as input and adds some functionality(decoration) to and it and returns it.
 
+This can happen only because python functions are 1st class citizens.
 
+There are 2 types of decorators available in python
 
+. Built in decorators like @staticmethod, @classmethod, @abstractmethod and @property etc
+. User defined decorators that we programmers can create according to our needs
+
+# Python are 1st class function
+
+def modify(func,num):
+  return func(num)
+
+def square(num):
+  return num**2
+
+modify(square,2)
+result:-
+4
 
