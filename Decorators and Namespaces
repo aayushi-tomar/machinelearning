@@ -30,3 +30,79 @@ result:-
 3
 2
 
+
+# local and global -> same name
+a = 2
+
+def temp():
+  # local var
+  a = 3
+  print(b)
+
+temp()
+print(a)
+
+# local and global -> local does not have but global has
+a = 2
+
+def temp():
+  # local var
+  print(a)
+
+temp()
+print(a)
+
+result:- 
+2
+2
+
+# local and global -> editing global
+a = 2
+
+def temp():
+  # local var
+  a += 1
+  print(a)
+
+temp()
+print(a)
+
+a = 2
+
+def temp():
+  # local var
+  global a
+  a += 1
+  print(a)
+
+temp()
+print(a)
+result:-
+3
+3
+
+# local and global -> global created inside local
+def temp():
+  # local var
+  global a
+  a = 1
+  print(a)
+
+temp()
+print(a)
+
+# local and global -> function parameter is local
+def temp(z):
+  # local var
+  print(z)
+
+a = 5
+temp(5)
+print(a)
+print(z)
+
+result:-5
+5
+
+
+
