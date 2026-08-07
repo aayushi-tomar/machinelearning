@@ -1,1 +1,60 @@
+There are 2 stages where error may happen in a program
+
+. During compilation -> Syntax Error
+. During execution -> Exceptions
+
+
+Syntax Error:-
+. Something in the program is not written according to the program grammar.
+. Error is raised by the interpreter/compiler
+. You can solve it by rectifying the program
+
+# Examples of syntax error
+print 'hello world'
+
+result:-
+ File "<ipython-input-3-4655b84ba7b7>", line 2
+    print 'hello world'
+                      ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello world')?
+
+Other examples of syntax error:-
+. Leaving symbols like colon,brackets
+. Misspelling a keyword
+. Incorrect indentation
+. empty if/else/loops/class/functions
+
+ex-1 
+a = 5
+if a==3
+  print('hello')
+
+result:-
+ File "<ipython-input-68-efc58c10458d>", line 2
+    if a==3
+           ^
+SyntaxError: invalid syntax
+
+ex-2
+a = 5
+iff a==3:
+  print('hello')
+
+result:-
+File "<ipython-input-69-d1e6fae154d5>", line 2
+    iff a==3:
+        ^
+SyntaxError: invalid syntax
+
+ex-3
+a = 5
+if a==3:
+print('hello')
+
+result:-
+  File "<ipython-input-70-ccc702dc036c>", line 3
+    print('hello')
+        ^
+IndentationError: expected an indented block
+
 
