@@ -162,6 +162,16 @@ result:-
 file nai mili
 ye to print hoga hi
 
+# raise Exception
+# In Python programming, exceptions are raised when errors occur at runtime. 
+# We can also manually raise exceptions using the raise keyword.
 
+# We can optionally pass values to the exception to clarify why that exception was raised
+
+raise ZeroDivisionError('aise hi try kar raha hu')
+# Java
+# try -> try
+# except -> catch
+# raise -> throw
 
 
