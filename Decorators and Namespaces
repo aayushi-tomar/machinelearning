@@ -193,3 +193,135 @@ modify(square,2)
 result:-
 4
 
+# simple example
+
+def my_decorator(func):
+  def wrapper():
+    print('***********************')
+    func()
+    print('***********************')
+  return wrapper
+
+def hello():
+  print('hello')
+
+def display():
+  print('hello nitish')
+
+a = my_decorator(hello)
+a()
+
+b = my_decorator(display)
+b()
+result:-
+[ ]
+# simple example
+
+def my_decorator(func):
+  def wrapper():
+    print('***********************')
+    func()
+    print('***********************')
+  return wrapper
+
+def hello():
+  print('hello')
+
+def display():
+  print('hello nitish')
+
+a = my_decorator(hello)
+a()
+
+b = my_decorator(display)
+b()
+***********************
+hello
+***********************
+***********************
+hello nitish
+***********************
+
+# Better syntax?
+# simple example
+
+def my_decorator(func):
+  def wrapper():
+    print('***********************')
+    func()
+    print('***********************')
+  return wrapper
+
+@my_decorator
+def hello():
+  print('hello')
+
+hello()
+result:-
+***********************
+hello
+***********************
+
+# anything meaningful?
+import time
+
+def timer(func):
+  def wrapper(*args):
+    start = time.time()
+    func(*args)
+    print('time taken by',func.__name__,time.time()-start,'secs')
+  return wrapper
+
+@timer
+def hello():
+  print('hello wolrd')
+  time.sleep(2)
+
+@timer
+def square(num):
+  time.sleep(1)
+  print(num**2)
+
+@timer
+def power(a,b):
+  print(a**b)
+
+hello()
+square(2)
+power(2,3)
+result:-
+hello wolrd
+time taken by hello 2.003671884536743 secs
+4
+time taken by square 1.0009939670562744 secs
+8
+time taken by power 2.1696090698242188e-05 secs
+
+# One last example -> decorators with arguments
+
+@checkdt(int)
+def square(num):
+  print(num**2)
+
+def sanity_check(data_type):
+  def outer_wrapper(func):
+    def inner_wrapper(*args):
+      if type(*args) == data_type:
+        func(*args)
+      else:
+        raise TypeError('Ye datatype nai chalega')
+    return inner_wrapper
+  return outer_wrapper
+
+@sanity_check(int)
+def square(num):
+  print(num**2)
+
+@sanity_check(str)
+def greet(name):
+  print('hello',name)
+
+square(2)
+
+result:-
+4
