@@ -45,4 +45,184 @@ Trick:-
 . Every Iterable has an iter function
 . Every Iterator has both iter function as well as a next function
 
+a = 2
+a
 
+#for i in a:
+    #print(i)
+    
+dir(a)
+
+a = 2
+a
+
+#for i in a:
+    #print(i)
+    
+dir(a)
+
+T = {1:2,3:4}
+dir(T)
+'__class__',
+ '__contains__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__reversed__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'clear',
+ 'copy',
+
+L = [1,2,3]
+
+# L is not an iterator
+iter_L = iter(L)
+
+# iter_L is an iterator
+
+
+['__class__',
+ '__delattr__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__iter__',
+ '__le__',
+ '__length_hint__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__next__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__setstate__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__']
+
+
+Understanding how for loop works:-
+
+num = [1,2,3]
+
+for i in num:
+    print(i)
+1
+2
+3
+
+
+num = [1,2,3]
+
+# fetch the iterator
+iter_num = iter(num)
+
+# step2 --> next
+next(iter_num)
+next(iter_num)
+next(iter_num)
+next(iter_num)
+
+
+Making our own for loop:-
+
+def mera_khudka_for_loop(iterable):
+    
+    iterator = iter(iterable)
+    
+    while True:
+        
+        try:
+            print(next(iterator))
+        except StopIteration:
+            break           
+
+a = [1,2,3]
+b = range(1,11)
+c = (1,2,3)
+d = {1,2,3}
+e = {0:1,1:1}
+
+mera_khudka_for_loop(e)
+0
+1
+
+
+
+A confusing point:-
+num = [1,2,3]
+iter_obj = iter(num)
+
+print(id(iter_obj),'Address of iterator 1')
+
+iter_obj2 = iter(iter_obj)
+print(id(iter_obj2),'Address of iterator 2')
+2280889893936 Address of iterator 1
+2280889893936 Address of iterator 2
+
+
+
+Let's create our own range() function
+class mera_range:
+    
+    def __init__(self,start,end):
+        self.start = start
+        self.end = end
+        
+    def __iter__(self):
+        return mera_range_iterator(self)
+
+
+class mera_range_iterator:
+    
+    def __init__(self,iterable_obj):
+        self.iterable = iterable_obj
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        
+        if self.iterable.start >= self.iterable.end:
+            raise StopIteration
+            
+        current = self.iterable.start
+        self.iterable.start+=1
+        return current
+x = mera_range(1,11)
+type(x)
+__main__.mera_range
+iter(x)
+<__main__.mera_range_iterator at 0x2130fd362b0>
