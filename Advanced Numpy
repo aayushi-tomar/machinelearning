@@ -312,7 +312,53 @@ actual
 array([ 5,  3,  9,  7,  3, 36, 49, 28, 20, 40,  2, 23, 29, 18, 30, 23,  7,
        40, 15, 11, 27, 44, 32, 28, 10])
 
+Working with missing values:-
+# Working with missing values -> np.nan
+a = np.array([1,2,3,4,np.nan,6])
+a
+array([ 1.,  2.,  3.,  4., nan,  6.])
 
+a[~np.isnan(a)]
+array([1., 2., 3., 4., 6.])
 
+Plotting Graphs:-
 
+# plotting a 2D plot
+# x = y
+import matplotlib.pyplot as plt
 
+x = np.linspace(-10,10,100)
+y = x
+
+plt.plot(x,y)
+
+# y = x^2
+x = np.linspace(-10,10,100)
+y = x**2
+
+plt.plot(x,y)
+
+# y = sin(x)
+x = np.linspace(-10,10,100)
+y = np.sin(x)
+
+plt.plot(x,y)
+[<matplotlib.lines.Line2D at 0x7f6f5d1d0100>]
+
+# y = xlog(x)
+x = np.linspace(-10,10,100)
+y = x * np.log(x)
+
+plt.plot(x,y)
+# y = xlog(x)
+x = np.linspace(-10,10,100)
+y = x * np.log(x)
+
+plt.plot(x,y)
+
+# sigmoid
+x = np.linspace(-10,10,100)
+y = 1/(1+np.exp(-x))
+
+plt.plot(x,y)
+[<matplotlib.lines.Line2D at 0x7f6f5401e100>]
