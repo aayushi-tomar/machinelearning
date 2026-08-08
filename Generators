@@ -1,1 +1,106 @@
+What is a Generator
+Python generators are a simple way of creating iterators.
+
+# iterable
+class mera_range:
+    
+    def __init__(self,start,end):
+        self.start = start
+        self.end = end
+        
+    def __iter__(self):
+        return mera_iterator(self)
+
+
+# iterator
+class mera_iterator:
+    
+    def __init__(self,iterable_obj):
+        self.iterable = iterable_obj
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        
+        if self.iterable.start >= self.iterable.end:
+            raise StopIteration
+        
+        current = self.iterable.start
+        self.iterable.start+=1
+        return current
+
+The Why
+L = [x for x in range(100000)]
+
+#for i in L:
+    #print(i**2)
+    
+import sys
+sys.getsizeof(L)
+
+x = range(10000000)
+
+#for i in x:
+    #print(i**2)
+sys.getsizeof(x)
+48
+
+A Simple Example
+def gen_demo():
+    
+    yield "first statement"
+    yield "second statement"
+    yield "third statement"
+gen = gen_demo()
+
+for i in gen:
+    print(i)
+first statement
+second statement
+third statement
+
+Example 2
+def square(num):
+    for i in range(1,num+1):
+        yield i**2
+gen = square(10)
+
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+for i in gen:
+    print(i)
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+
+Range Function using Generator:-
+
+def mera_range(start,end):
+    
+    for i in range(start,end):
+        yield i
+for i in mera_range(15,26):
+    print(i)
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
 
