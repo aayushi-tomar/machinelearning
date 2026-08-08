@@ -1,1 +1,49 @@
+def multiply()
+
+result = 0;
+
+for i in range(b):
+result = result + a
+
+print(result)
+
+multiply(3, 4)
+
+-------------------------------
+
+Using Recursion
+
+def mul(a, b):
+if b == 1;
+return a
+else:
+return a + mul(a, b - 1)
+
+print(mul(5, 6))
+
+Factorial Program:-
+
+def fact(number):
+if number == 1:
+return 1
+else:
+return number * fact(number - 1)
+print(fact(5))
+
+Palindrome:-
+
+def palin(text):
+if len(text) <= 1:
+print("palindrome")
+else:
+if text[0] == text[-1]
+palin(text[1:-1])
+else:
+print("Not a palin")
+
+
+The rabbit Problem:-
+
+
+
 
