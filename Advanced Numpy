@@ -14,3 +14,24 @@ for i in range(len(a)):
 print(time.time()-start)
 
 3.2699835300445557
+
+# numpy
+import numpy as np
+a = np.arange(10000000)
+b = np.arange(10000000,20000000)
+
+start = time.time()
+c = a + b
+print(time.time()-start)
+0.06481003761291504
+
+# memory
+a = [i for i in range(10000000)]
+import sys
+
+sys.getsizeof(a)
+81528048
+
+a = np.arange(10000000,dtype=np.int8)
+sys.getsizeof(a)
+10000104
