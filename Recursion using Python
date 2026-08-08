@@ -53,5 +53,11 @@ return fib(m - 1) + fib(m - 2)
 print(fib(12))
 233
 
+def memo(m, d):
+if m in d:
+return d[m]
+else:
+d[m] = memo(m - 1, d) + memo(m - 2, d)
+return d[m]
 
 
