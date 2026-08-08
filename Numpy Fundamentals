@@ -196,3 +196,52 @@ array([[                   0,                    1,                16384,
          6839173302027254275]])
 
 
+Array Functions:-
+a1 = np.random.random((3,3))
+a1 = np.round(a1*100)
+a1
+result:-
+array([[43., 28., 71.],
+       [27., 93., 36.],
+       [31., 18.,  7.]])
+
+# max/min/sum/prod
+# 0 -> col and 1 -> row
+np.prod(a1,axis=0)
+result:-
+array([35991., 46872., 17892.])
+
+# max/min/sum/prod
+# 0 -> col and 1 -> row
+np.prod(a1,axis=0)
+result:-
+array([35991., 46872., 17892.])
+
+# dot product
+a2 = np.arange(12).reshape(3,4)
+a3 = np.arange(12,24).reshape(4,3)
+
+np.dot(a2,a3)
+result:-
+array([[114, 120, 126],
+       [378, 400, 422],
+       [642, 680, 718]])
+
+# log and exponents
+np.exp(a1)
+result:-
+array([[4.72783947e+18, 1.44625706e+12, 6.83767123e+30],
+       [5.32048241e+11, 2.45124554e+40, 4.31123155e+15],
+       [2.90488497e+13, 6.56599691e+07, 1.09663316e+03]])
+
+# round/floor/ceil
+
+np.ceil(np.random.random((2,3))*100)
+
+result:-
+array([[48.,  4.,  6.],
+       [ 3., 18., 82.]])
+
+
+
+
