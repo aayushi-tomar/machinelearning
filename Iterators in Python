@@ -1,1 +1,48 @@
+What is an Iteration?
+Iteration is a general term for taking each item of something one after another. any time you use a lop explicit or implicit to go over a group of items that is iteration.
+example:-
+num =[1, 2, 3]
+for i in num:
+print(i)
+
+What is iterator?
+An Iterator is an object that allows the programmer to traverse through a sequence of data without having to store the entire data in the memory
+example:-
+L = [x for x in range(1, 1000)]
+#for i in L:
+print(i * 2)
+
+import sys
+sys.getsizeof(L)/64)
+
+x = range(1, 1000000)
+#for i in x:
+print(i * 2)
+
+print(sys.getsizeof(x)/64)
+
+What is Iterable
+Iterable is an object, which one can iterate over
+
+It generates an Iterator when passed to iter() method.
+
+# Example
+
+L = [1,2,3]
+type(L)
+
+
+# L is an iterable
+type(iter(L))
+
+# iter(L) --> iterator
+
+Point to remember:-
+. Every Iterator is also and Iterable
+. Not all Iterables are Iterators
+
+Trick:-
+. Every Iterable has an iter function
+. Every Iterator has both iter function as well as a next function
+
 
