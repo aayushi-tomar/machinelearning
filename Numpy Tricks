@@ -1,1 +1,8 @@
+np.sort
+Return a sorted copy of an array.
 
+# code
+import numpy as np
+a = np.random.randint(1,100,15)
+a
+result:- array([11, 53, 28, 50, 38, 37, 94, 92,  5, 30, 68,  9, 78,  2, 21])
