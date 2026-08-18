@@ -74,3 +74,28 @@ array([[ 0,  1,  2,  6,  7,  8],
        [ 3,  4,  5,  9, 10, 11]])
 
 
+### np.unique
+
+With the help of np.unique() method, we can get the unique values from an array given as parameter in np.unique() method.
+
+https://numpy.org/doc/stable/reference/generated/numpy.unique.html/
+np.unique
+With the help of np.unique() method, we can get the unique values from an array given as parameter in np.unique() method.
+
+# code
+e = np.array([1,1,2,2,3,3,4,4,5,5,6,6])
+
+np.unique(e)
+array([1, 2, 3, 4, 5, 6])
+
+np.expand_dims
+With the help of Numpy.expand_dims() method, we can get the expanded dimensions of an array
+
+# code
+a.shape
+(15,)
+
+np.expand_dims(a,axis=0).shape
+(1, 15)
+
+
