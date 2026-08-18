@@ -116,4 +116,46 @@ array([11,  0, 28, 50, 38, 37,  0,  0,  5, 30,  0,  9,  0,  2, 21])
 np.where(a%2 == 0,0,a)
 array([11, 53,  0,  0,  0, 37,  0,  0,  5,  0,  0,  9,  0,  0, 21])
 
+np.argmax
+The numpy.argmax() function returns indices of the max element of the array in a particular axis.
+
+# code
+a
+array([11, 53, 28, 50, 38, 37, 94, 92,  5, 30, 68,  9, 78,  2, 21])
+
+np.argmax(b,axis=0)
+array([2, 2, 2, 3])
+
+# np.argmin
+np.argmin(a)
+13
+
+np.cumsum
+numpy.cumsum() function is used when we want to compute the cumulative sum of array elements over a given axis.
+
+a
+array([11, 53, 28, 50, 38, 37, 94, 92,  5, 30, 68,  9, 78,  2, 21])
+
+np.cumsum(a)
+array([ 11,  64,  92, 142, 180, 217, 311, 403, 408, 438, 506, 515, 593,
+       595, 616])
+
+np.cumsum(b,axis=1)
+array([[ 12,  64, 106, 112],
+       [ 29,  47,  94, 149],
+       [ 61, 154, 237, 246],
+       [ 38, 101, 145, 230],
+       [  8,  95, 126, 198],
+       [ 40, 111, 113, 120]])
+
+# np.cumprod
+np.cumprod(a)
+array([                  11,                  583,                16324,
+                     816200,             31015600,           1147577200,
+               107872256800,        9924247625600,       49621238128000,
+           1488637143840000,   101227325781120000,   911045932030080000,
+       -2725393596491966464, -5450787192983932928, -3786066610405281792])
+
+np.percentile
+numpy.percentile()function used to compute the nth percentile of the given data (array elements) along the specified axis.
 
