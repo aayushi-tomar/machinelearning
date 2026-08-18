@@ -99,3 +99,21 @@ np.expand_dims(a,axis=0).shape
 (1, 15)
 
 
+np.where
+The numpy.where() function returns the indices of elements in an input array where the given condition is satisfied.
+
+a
+array([11, 53, 28, 50, 38, 37, 94, 92,  5, 30, 68,  9, 78,  2, 21])
+
+# find all indices with value greater than 50
+np.where(a>50)
+(array([ 1,  6,  7, 10, 12]),)
+
+# replace all values > 50 with 0
+np.where(a>50,0,a)
+array([11,  0, 28, 50, 38, 37,  0,  0,  5, 30,  0,  9,  0,  2, 21])
+
+np.where(a%2 == 0,0,a)
+array([11, 53,  0,  0,  0, 37,  0,  0,  5,  0,  0,  9,  0,  0, 21])
+
+
