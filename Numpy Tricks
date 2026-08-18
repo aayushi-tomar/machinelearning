@@ -237,3 +237,8 @@ array([1, 2, 3, 4, 5, 6, 7])
 np.intersect1d(m,n)
 array([3, 4, 5])
 
+np.clip
+numpy.clip() function is used to Clip (limit) the values in an array.
+
+np.clip(a,a_min=25,a_max=75)
+
