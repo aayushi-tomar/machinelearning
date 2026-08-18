@@ -209,3 +209,31 @@ array([21,  2, 78,  9, 68, 30,  5, 92, 94, 37, 38, 50, 28, 53, 11])
 np.put
 The numpy.put() function replaces specific elements of an array with given values of p_array. Array indexed works on flattened array.
 np.put(a,[0,1],[110,530])
+
+np.delete
+The numpy.delete() function returns a new array with the deletion of sub-arrays along with the mentioned axis.
+# code
+a
+array([110, 530,  28,  50,  38,  37,  94,  92,   5,  30,  68,   9,  78,
+         2,  21])
+
+np.delete(a,[0,2,4])
+rray([530,  50,  37,  94,  92,   5,  30,  68,   9,  78,   2,  21])
+
+
+Set functions
+np.union1d
+np.intersect1d
+np.setdiff1d
+np.setxor1d
+np.in1d
+
+m = np.array([1,2,3,4,5])
+n = np.array([3,4,5,6,7])
+
+np.union1d(m,n
+array([1, 2, 3, 4, 5, 6, 7])
+
+np.intersect1d(m,n)
+array([3, 4, 5])
+
