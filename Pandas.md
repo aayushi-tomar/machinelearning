@@ -538,3 +538,34 @@ match_no
 214    False
 215    False
 Name: runs, Length: 215, dtype: bool
+
+Boolean Indexing on Series:-
+# Find no of 50's and 100's scored by kohli
+vk[vk >= 50].size
+50
+
+# find number of ducks
+vk[vk == 0].size
+9
+
+# Count number of day when I had more than 200 subs a day
+subs[subs > 200].size
+59
+
+# find actors who have done more than 20 movies
+num_movies = movies.value_counts()
+num_movies[num_movies > 20]
+
+# find actors who have done more than 20 movies
+num_movies = movies.value_counts()
+num_movies[num_movies > 20]
+Akshay Kumar        48
+Amitabh Bachchan    45
+Ajay Devgn          38
+Salman Khan         31
+Sanjay Dutt         26
+Shah Rukh Khan      22
+Emraan Hashmi       21
+Name: lead, dtype: int64
+
+
