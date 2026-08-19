@@ -373,3 +373,64 @@ Name: runs, dtype: int64
 # indexing with labels -> fancy indexing
 movies['2 States (2014 film)']
 Arjun Kapoor
+
+Editing Series:-
+# using indexing
+marks_series[1] = 100
+marks_series
+maths       67
+english    100
+science     89
+hindi      100
+Name: nitish ke marks, dtype: int64
+
+# what if an index does not exist
+marks_series['evs'] = 100
+
+marks_series
+maths       67
+english    100
+science     89
+hindi      100
+sst         90
+evs        100
+Name: nitish ke marks, dtype: int64
+
+# slicing
+runs_ser[2:4] = [100,100]
+runs_ser
+
+0     13
+1     24
+2    100
+3    100
+4    100
+dtype: int64
+
+# fancy indexing
+runs_ser[[0,3,4]] = [0,0,0]
+runs_se
+0      0
+1     24
+2    100
+3      0
+4      0
+dtype: int64
+
+# using index label
+movies['2 States (2014 film)'] = 'Alia Bhatt'
+movies
+movie
+Zor Lagaa Ke...Haiya!            Meghan Jadhav
+Zokkomon                       Darsheel Safary
+Zindagi Tere Naam           Mithun Chakraborty
+Zindagi Na Milegi Dobara        Hrithik Roshan
+Zindagi 50-50                      Veena Malik
+                                   ...        
+2 States (2014 film)                Alia Bhatt
+1971 (2007 film)                Manoj Bajpayee
+1920: The Evil Returns             Vicky Ahuja
+1920: London                     Sharman Joshi
+1920 (film)                   Rajniesh Duggall
+Name: lead, Length: 1500, dtype: object
+
