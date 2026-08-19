@@ -223,3 +223,21 @@ Zindagi 50-50                      Veena Malik
 1920: London                     Sharman Joshi
 1920 (film)                   Rajniesh Duggall
 Name: lead, Length: 1500, dtype: object
+
+vk.sort_values(inplace=True)
+vk
+match_no
+87       0
+211      0
+207      0
+206      0
+91       0
+      ... 
+164    100
+120    100
+123    108
+126    109
+128    113
+Name: runs, Length: 215, dtype: int64
+
+
