@@ -575,5 +575,310 @@ movies.value_counts().head(20).plot(kind='pie')
 
 <img width="384" height="231" alt="download" src="https://github.com/user-attachments/assets/04def239-27cc-428e-bb0d-25f244f35da8" />
 
+Some Important Series Methods:-
+# astype
+# between
+# clip
+# drop_duplicates
+# isnull
+# dropna
+# fillna
+# isin
+# apply
+# copy
 
+import numpy as np
+import pandas as pd
 
+subs = pd.read_csv('/content/subs.csv',squeeze=True)
+subs
+0       48
+1       57
+2       40
+3       43
+4       44
+      ... 
+360    231
+361    226
+362    155
+363    144
+364    172
+Name: Subscribers gained, Length: 365, dtype: int64
+
+vk = pd.read_csv('/content/kohli_ipl.csv',index_col='match_no',squeeze=True)
+vk
+match_no
+1       1
+2      23
+3      13
+4      12
+5       1
+       ..
+211     0
+212    20
+213    73
+214    25
+215     7
+Name: runs, Length: 215, dtype: int64
+
+movies = pd.read_csv('/content/bollywood.csv',index_col='movie',squeeze=True)
+movies
+movie
+Uri: The Surgical Strike                   Vicky Kaushal
+Battalion 609                                Vicky Ahuja
+The Accidental Prime Minister (film)         Anupam Kher
+Why Cheat India                            Emraan Hashmi
+Evening Shadows                         Mona Ambegaonkar
+                                              ...       
+Hum Tumhare Hain Sanam                    Shah Rukh Khan
+Aankhen (2002 film)                     Amitabh Bachchan
+Saathiya (film)                             Vivek Oberoi
+Company (film)                                Ajay Devgn
+Awara Paagal Deewana                        Akshay Kumar
+Name: lead, Length: 1500, dtype: object
+
+# astype
+import sys
+sys.getsizeof(vk)
+3456
+
+sys.getsizeof(vk.astype('int16'))
+2166
+
+# between
+vk[vk.between(51,99)].size
+43
+
+# clip
+subs
+0       48
+1       57
+2       40
+3       43
+4       44
+      ... 
+360    231
+361    226
+362    155
+363    144
+364    172
+Name: Subscribers gained, Length: 365, dtype: int64
+
+subs.clip(100,200)
+0      100
+1      100
+2      100
+3      100
+4      100
+      ... 
+360    200
+361    200
+362    155
+363    144
+364    172
+Name: Subscribers gained, Length: 365, dtype: int64
+
+# drop_duplicates
+temp = pd.Series([1,1,2,2,3,3,4,4])
+temp
+
+# drop_duplicates
+temp = pd.Series([1,1,2,2,3,3,4,4])
+temp
+0    1
+1    1
+2    2
+3    2
+4    3
+5    3
+6    4
+7    4
+dtype: int64
+
+temp.drop_duplicates(keep='last')
+1    1
+3    2
+5    3
+7    4
+dtype: int64
+
+temp.duplicated().sum()
+4
+
+vk.duplicated().sum()
+137
+
+movies.drop_duplicates()
+movie
+Uri: The Surgical Strike                   Vicky Kaushal
+Battalion 609                                Vicky Ahuja
+The Accidental Prime Minister (film)         Anupam Kher
+Why Cheat India                            Emraan Hashmi
+Evening Shadows                         Mona Ambegaonkar
+                                              ...       
+Sssshhh...                              Tanishaa Mukerji
+Rules: Pyaar Ka Superhit Formula                  Tanuja
+Right Here Right Now (film)                        Ankit
+Talaash: The Hunt Begins...                Rakhee Gulzar
+The Pink Mirror                          Edwin Fernandes
+Name: lead, Length: 566, dtype: object
+
+temp = pd.Series([1,2,3,np.nan,5,6,np.nan,8,np.nan,10])
+temp
+0     1.0
+1     2.0
+2     3.0
+3     NaN
+4     5.0
+5     6.0
+6     NaN
+7     8.0
+8     NaN
+9    10.0
+dtype: float64
+
+temp.size
+10
+
+temp.count()
+7
+
+# isnull
+temp.isnull().sum()
+3
+
+# dropna
+temp.dropna()
+0     1.0
+1     2.0
+2     3.0
+4     5.0
+5     6.0
+7     8.0
+9    10.0
+dtype: float64
+
+# fillna
+temp.fillna(temp.mean())
+0     1.0
+1     2.0
+2     3.0
+3     5.0
+4     5.0
+5     6.0
+6     5.0
+7     8.0
+8     5.0
+9    10.0
+dtype: float64
+
+# isin
+vk[(vk == 49) | (vk == 99)]
+match_no
+82    99
+86    49
+Name: runs, dtype: int64
+
+vk[vk.isin([49,99])]
+match_no
+82    99
+86    49
+Name: runs, dtype: int64
+
+# apply
+movies
+movie
+Uri: The Surgical Strike                   Vicky Kaushal
+Battalion 609                                Vicky Ahuja
+The Accidental Prime Minister (film)         Anupam Kher
+Why Cheat India                            Emraan Hashmi
+Evening Shadows                         Mona Ambegaonkar
+                                              ...       
+Hum Tumhare Hain Sanam                    Shah Rukh Khan
+Aankhen (2002 film)                     Amitabh Bachchan
+Saathiya (film)                             Vivek Oberoi
+Company (film)                                Ajay Devgn
+Awara Paagal Deewana                        Akshay Kumar
+Name: lead, Length: 1500, dtype: object
+
+movies.apply(lambda x:x.split()[0].upper())
+movie
+Uri: The Surgical Strike                  VICKY
+Battalion 609                             VICKY
+The Accidental Prime Minister (film)     ANUPAM
+Why Cheat India                          EMRAAN
+Evening Shadows                            MONA
+                                         ...   
+Hum Tumhare Hain Sanam                     SHAH
+Aankhen (2002 film)                     AMITABH
+Saathiya (film)                           VIVEK
+Company (film)                             AJAY
+Awara Paagal Deewana                     AKSHAY
+Name: lead, Length: 1500, dtype: object
+
+subs
+0       48
+1       57
+2       40
+3       43
+4       44
+      ... 
+360    231
+361    226
+362    155
+363    144
+364    172
+Name: Subscribers gained, Length: 365, dtype: int64
+
+subs.apply(lambda x:'good day' if x > subs.mean() else 'bad day')
+0       bad day
+1       bad day
+2       bad day
+3       bad day
+4       bad day
+         ...   
+360    good day
+361    good day
+362    good day
+363    good day
+364    good day
+Name: Subscribers gained, Length: 365, dtype: object
+
+# copy
+vk
+match_no
+1       1
+2      23
+3      13
+4      12
+5       1
+       ..
+211     0
+212    20
+213    73
+214    25
+215     7
+Name: runs, Length: 215, dtype: int64
+
+new = vk.head()
+new
+match_no
+1     1
+2    23
+3    13
+4    12
+5     1
+Name: runs, dtype: int64
+
+new[1] = 1
+new = vk.head().copy()
+new[1] = 100
+
+new
+match_no
+1    100
+2     23
+3     13
+4     12
+5      1
+Name: runs, dtype: int64
