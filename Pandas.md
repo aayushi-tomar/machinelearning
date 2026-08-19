@@ -129,16 +129,97 @@ Name: runs, Length: 215, dtype: int64
 movies = pd.read_csv('/content/bollywood.csv',index_col='movie',squeeze=True)
 movies
 movie
-Uri: The Surgical Strike                   Vicky Kaushal
-Battalion 609                                Vicky Ahuja
+Uri: The Surgical Strike                     Vicky Kaushal
+Battalion 609                                 Vicky Ahuja
 The Accidental Prime Minister (film)         Anupam Kher
 Why Cheat India                            Emraan Hashmi
-Evening Shadows                         Mona Ambegaonkar
+Evening Shadows                           Mona Ambegaonkar
                                               ...       
-Hum Tumhare Hain Sanam                    Shah Rukh Khan
+Hum Tumhare Hain Sanam                   Shah Rukh Khan
 Aankhen (2002 film)                     Amitabh Bachchan
 Saathiya (film)                             Vivek Oberoi
 Company (film)                                Ajay Devgn
 Awara Paagal Deewana                        Akshay Kumar
 Name: lead, Length: 1500, dtype: object
 
+Series methods:-
+# head and tail
+subs.head()
+0    48
+1    57
+2    40
+3    43
+4    44
+Name: Subscribers gained, dtype: int64
+
+vk.head(3)
+match_no
+1     1
+2    23
+3    13
+Name: runs, dtype: int64
+
+vk.tail(10)
+match_no
+206     0
+207     0
+208     9
+209    58
+210    30
+211     0
+212    20
+213    73
+214    25
+215     7
+Name: runs, dtype: int64
+
+# value_counts -> movies
+movies.value_counts()
+Akshay Kumar        48
+Amitabh Bachchan    45
+Ajay Devgn          38
+Salman Khan         31
+Sanjay Dutt         26
+                    ..
+Diganth              1
+Parveen Kaur         1
+Seema Azmi           1
+Akanksha Puri        1
+Edwin Fernandes      1
+Name: lead, Length: 566, dtype: int64
+
+# sort_values -> inplace
+vk.sort_values(ascending=False).head(1).values[0]
+113
+
+vk.sort_values(ascending=False)
+match_no
+128    113
+126    109
+123    108
+164    100
+120    100
+      ... 
+93       0
+211      0
+130      0
+8        0
+135      0
+Name: runs, Length: 215, dtype: int64
+
+# sort_index -> inplace -> movies
+movies.sort_index(ascending=False,inplace=True)
+movies
+movie
+Zor Lagaa Ke...Haiya!            Meghan Jadhav
+Zokkomon                       Darsheel Safary
+Zindagi Tere Naam           Mithun Chakraborty
+Zindagi Na Milegi Dobara        Hrithik Roshan
+Zindagi 50-50                      Veena Malik
+                                   ...        
+2 States (2014 film)              Arjun Kapoor
+1971 (2007 film)                Manoj Bajpayee
+1920: The Evil Returns             Vicky Ahuja
+1920: London                     Sharman Joshi
+1920 (film)                   Rajniesh Duggall
+Name: lead, Length: 1500, dtype: object
