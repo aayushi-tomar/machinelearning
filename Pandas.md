@@ -91,3 +91,20 @@ RangeIndex(start=0, stop=5, step=1)
 # values
 marks_series.values
 array([ 67,  57,  89, 100])
+
+Series using read_csv:-
+# with one col
+subs = pd.read_csv('/content/subs.csv',squeeze=True)
+subs
+0       48
+1       57
+2       40
+3       43
+4       44
+      ... 
+360    231
+361    226
+362    155
+363    144
+364    172
+Name: Subscribers gained, Length: 365, dtype: int64
