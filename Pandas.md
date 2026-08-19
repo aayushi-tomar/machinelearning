@@ -240,4 +240,39 @@ match_no
 128    113
 Name: runs, Length: 215, dtype: int64
 
+Series Maths Methods:-
+# count
+vk.count()
+215
 
+# sum -> product
+subs.sum()
+49510
+
+# mean -> median -> mode -> std -> var
+subs.mean()
+print(vk.median())
+print(movies.mode())
+print(subs.std())
+print(vk.var())
+24.0
+0    Akshay Kumar
+dtype: object
+62.6750230372527
+688.0024777222343
+
+# min/max
+subs.max()
+396
+
+# describe
+subs.describe()
+count    365.000000
+mean     135.643836
+std       62.675023
+min       33.000000
+25%       88.000000
+50%      123.000000
+75%      177.000000
+max      396.000000
+Name: Subscribers gained, dtype: float64
