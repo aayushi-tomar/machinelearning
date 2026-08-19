@@ -568,4 +568,12 @@ Shah Rukh Khan      22
 Emraan Hashmi       21
 Name: lead, dtype: int64
 
+Plotting Graphs on Series:-
+subs.plot()<img width="375" height="248" alt="download" src="https://github.com/user-attachments/assets/6578e06f-9fc0-42c1-9dfc-17d89728fe82" />
+
+movies.value_counts().head(20).plot(kind='pie')
+
+<img width="384" height="231" alt="download" src="https://github.com/user-attachments/assets/04def239-27cc-428e-bb0d-25f244f35da8" />
+
+
 
