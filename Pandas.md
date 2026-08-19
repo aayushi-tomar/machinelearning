@@ -108,3 +108,37 @@ subs
 363    144
 364    172
 Name: Subscribers gained, Length: 365, dtype: int64
+
+# with 2 cols
+vk = pd.read_csv('/content/kohli_ipl.csv',index_col='match_no',squeeze=True)
+vk
+match_no
+1       1
+2      23
+3      13
+4      12
+5       1
+       ..
+211     0
+212    20
+213    73
+214    25
+215     7
+Name: runs, Length: 215, dtype: int64
+
+movies = pd.read_csv('/content/bollywood.csv',index_col='movie',squeeze=True)
+movies
+movie
+Uri: The Surgical Strike                   Vicky Kaushal
+Battalion 609                                Vicky Ahuja
+The Accidental Prime Minister (film)         Anupam Kher
+Why Cheat India                            Emraan Hashmi
+Evening Shadows                         Mona Ambegaonkar
+                                              ...       
+Hum Tumhare Hain Sanam                    Shah Rukh Khan
+Aankhen (2002 film)                     Amitabh Bachchan
+Saathiya (film)                             Vivek Oberoi
+Company (film)                                Ajay Devgn
+Awara Paagal Deewana                        Akshay Kumar
+Name: lead, Length: 1500, dtype: object
+
