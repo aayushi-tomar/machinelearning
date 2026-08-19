@@ -277,3 +277,99 @@ min       33.000000
 75%      177.000000
 max      396.000000
 Name: Subscribers gained, dtype: float64
+
+Series Indexing:-
+# integer indexing
+x = pd.Series([12,13,14,35,46,57,58,79,9])
+x
+0    12
+1    13
+2    14
+3    35
+4    46
+5    57
+6    58
+7    79
+8     9
+dtype: int64
+
+# negative indexing
+x[-1]
+---------------------------------------------------------------------------
+ValueError  
+
+movies
+movie
+Zor Lagaa Ke...Haiya!            Meghan Jadhav
+Zokkomon                       Darsheel Safary
+Zindagi Tere Naam           Mithun Chakraborty
+Zindagi Na Milegi Dobara        Hrithik Roshan
+Zindagi 50-50                      Veena Malik
+                                   ...        
+2 States (2014 film)              Arjun Kapoor
+1971 (2007 film)                Manoj Bajpayee
+1920: The Evil Returns             Vicky Ahuja
+1920: London                     Sharman Joshi
+1920 (film)                   Rajniesh Duggall
+Name: lead, Length: 1500, dtype: object
+
+vk[-1]
+---------------------------------------------------------------------------
+KeyError
+
+marks_series[-1]
+100
+
+# slicing
+vk[5:16]
+match_no
+6      9
+7     34
+8      0
+9     21
+10     3
+11    10
+12    38
+13     3
+14    11
+15    50
+16     2
+Name: runs, dtype: int64
+
+# negative slicing
+vk[-5:]
+match_no
+211     0
+212    20
+213    73
+214    25
+215     7
+Name: runs, dtype: int64
+
+movies[::2]
+movie
+Zor Lagaa Ke...Haiya!         Meghan Jadhav
+Zindagi Tere Naam        Mithun Chakraborty
+Zindagi 50-50                   Veena Malik
+Zinda (film)                    Sanjay Dutt
+Zid (2014 film)              Mannara Chopra
+                                ...        
+3 Storeys                       Aisha Ahmed
+3 Deewarein                Naseeruddin Shah
+22 Yards                        Barun Sobti
+1971 (2007 film)             Manoj Bajpayee
+1920: London                  Sharman Joshi
+Name: lead, Length: 750, dtype: object
+
+# fancy indexing
+vk[[1,3,4,5]]
+match_no
+1     1
+3    13
+4    12
+5     1
+Name: runs, dtype: int64
+
+# indexing with labels -> fancy indexing
+movies['2 States (2014 film)']
+Arjun Kapoor
